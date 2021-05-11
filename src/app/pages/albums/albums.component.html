@@ -3,11 +3,11 @@
 
   <div class="rockCard album__card" *ngFor="let album of albums$|slice:0:12" (click)="cardLog()">
     <img src="{{album.image[2]['#text']}}" style="width: 100%; height: 100%;">
-    <span class="album__info">
+    <!-- <span class="album__info">
       <p id="name">{{album.name}}</p>
       <p>{{album.artist.name}}</p>
     </span>
-    
+     -->
 
   </div>
 
