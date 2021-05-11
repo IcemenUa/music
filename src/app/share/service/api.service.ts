@@ -10,12 +10,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getAlbums(genre: string): Observable<any> {
+  getAlbums(genre: any): Observable<any> {
 
     return this.http.get(`${environment.apiUrl}?method=tag.gettopalbums&tag=${genre}&api_key=${environment.apiKey}&format=json`)
-
-
-
-  }
+    
+  };
 
 }

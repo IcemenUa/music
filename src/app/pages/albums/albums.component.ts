@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/share/service/api.service';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-albums',
@@ -8,21 +8,20 @@ import { Observable } from 'rxjs';
   styleUrls: ['./albums.component.scss']
 })
 export class AlbumsComponent implements OnInit {
-  albums$: Observable<any>;
-  constructor(public musicApi: ApiService) { }
+  albums$;
+  
+  constructor(public musicApi: ApiService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getAlbums('rock')
+    this.getAlbums(this.router.snapshot.paramMap.get('genre'))
   }
 
-  getAlbums(genre: string): void {
-
+  getAlbums(genre: any): void {
     this.musicApi.getAlbums(genre).subscribe((res) =>
       this.albums$ = res.albums.album
     )
-
     console.log(this.albums$);
-  }
+  };
 
 
 

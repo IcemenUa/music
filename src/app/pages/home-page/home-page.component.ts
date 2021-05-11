@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment';
-import { ApiService } from '../../share/service/api.service';
+
 
 
 @Component({
@@ -10,21 +9,12 @@ import { ApiService } from '../../share/service/api.service';
 })
 export class HomePageComponent implements OnInit {
 
-  albums$: any;
-
-  constructor(public musicApi: ApiService) { }
+  constructor() { }
 
 
   ngOnInit(): void {
   }
 
-  getAlbums(genre): void {
-
-    this.musicApi.getAlbums(genre).subscribe((res) =>
-      this.albums$ = res.albums.album
-      )
-    console.log(this.albums$);
-  }
 
 
 
