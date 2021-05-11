@@ -8,21 +8,27 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./albums.component.scss']
 })
 export class AlbumsComponent implements OnInit {
+
   albums$;
-  
+
   constructor(public musicApi: ApiService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getAlbums(this.router.snapshot.paramMap.get('genre'))
   }
 
-  getAlbums(genre: any): void {
-    this.musicApi.getAlbums(genre).subscribe((res) =>
-      this.albums$ = res.albums.album
+  private getAlbums(genre: string): void {
+
+    this.musicApi.getAlbums(genre).subscribe(
+      (res) =>
+        this.albums$ = res.albums.album
     )
-    console.log(this.albums$);
+
   };
 
+  cardLog() {
+    console.log(this.albums$);
 
+  }
 
 }
