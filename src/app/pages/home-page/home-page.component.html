@@ -1,25 +1,26 @@
 <div class="genres">
 
-  <div class="rockCard genres__card" (click)="getAlbums('rock')">
+  <div class="rockCard genres__card" (click)="getAlbums('Rock')"
+  [routerLink]="[ '/home/','Rock' ]">
     <p>Rock</p>
   </div>
-  <div class="electroCard genres__card" (click)="getAlbums('Electro')">
+  <div class="electroCard genres__card"  [routerLink]="[ '/home/','Electro' ]">
     <p>Electro</p>
 
   </div>
-  <div class="hipHopCard genres__card" (click)="getAlbums('Hip-Hop')">
+  <div class="hipHopCard genres__card"  [routerLink]="[ '/home/','Hip-Hop' ]">
     <p>Hip-Hop</p>
 
   </div>
-  <div class="popCard genres__card" (click)="getAlbums('Pop')">
+  <div class="popCard genres__card"  [routerLink]="[ '/home/','Pop' ]">
     <p>Pop</p>
 
   </div>
-  <div class="rNbCard  genres__card" (click)="getAlbums('R and B')">
+  <div class="rNbCard  genres__card"  [routerLink]="[ '/home/','R&B' ]">
     <p>R&B</p>
 
   </div>
-  <div class="indieCard genres__card" (click)="getAlbums('Indie')">
+  <div class="indieCard genres__card"  [routerLink]="[ '/home/','Indie' ]">
     <p>Indie</p>
 
   </div>

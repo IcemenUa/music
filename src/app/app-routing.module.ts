@@ -8,7 +8,7 @@ import { AlbumsComponent } from './pages/albums/albums.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomePageComponent },
-  { path: 'albums', component: AlbumsComponent }
+  { path: 'home/:genre', component: AlbumsComponent}
 
 ];
 
