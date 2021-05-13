@@ -1,32 +1,54 @@
 .albums {
-    display: grid;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-rows: 14vw 14vw;
+  grid-template-columns: 14vw 14vw 14vw 14vw 14vw 14vw;
+  grid-gap: 1.5vw;
+  width: 100%;
+  height: 94vh;
+  background-color: rgb(26, 26, 26);
+
+  .album__card {
+    overflow: hidden;
+    display: flex;
     justify-content: center;
-    align-content: center;
-    grid-template-rows: 14vw 14vw;
-    grid-template-columns: 14vw 14vw 14vw 14vw 14vw 14vw;
-    grid-gap: 1.5vw;
-    width: 100%;
-    height: 94vh;
-    background-color: rgb(26, 26, 26);
-  
-    .album__card {
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 0.5vw;
-      text-align: center;
-      font-family: 'anton';
-      font-size: 1.5vw;
-      text-align: center;
-      color: white;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.49);
+    align-items: center;
+    border-radius: 0.5vw;
+    text-align: center;
+    font-family: 'anton';
+    font-size: 1.5vw;
+    text-align: center;
+    color: white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.49);
+
+    .album__info {
+      display: none;
+      cursor: default;
     }
   }
-  
-  
-  
-  
+
+  .album__card:hover {
+    background-color: black;
+    padding: 3px;
+
+    .album__card__image {
+      display: none;
+    }
+
+    .album__info {
+      display: block;
+    }
+  }
+}
+
+.liked {
+  fill: red;
+}
+
+.unliked {
+  fill: white;
+}

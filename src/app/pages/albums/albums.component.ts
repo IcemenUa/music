@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/share/service/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { Album } from '../../share/models/album.model';
 
 @Component({
   selector: 'app-albums',
@@ -8,7 +9,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./albums.component.scss']
 })
 export class AlbumsComponent implements OnInit {
-
+  liked = true
+  likedAlbums;
   albums$;
 
   constructor(public musicApi: ApiService, private router: ActivatedRoute) { }
@@ -24,7 +26,13 @@ export class AlbumsComponent implements OnInit {
         this.albums$ = res.albums.album
     )
 
+
   };
+  likeToggle(): void {
+    console.log('click');
+
+  }
+
 
   cardLog() {
     console.log(this.albums$);
